@@ -12,6 +12,9 @@
 		CE6FF8471F6771CC00167353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF8451F6771CC00167353 /* Main.storyboard */; };
 		CE6FF8491F6771CC00167353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF8481F6771CC00167353 /* Assets.xcassets */; };
 		CE6FF84C1F6771CC00167353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF84A1F6771CC00167353 /* LaunchScreen.storyboard */; };
+		CE6FF8541F67847400167353 /* CurvingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF8531F67847400167353 /* CurvingProgressView.swift */; };
+		CE6FF8561F6784A300167353 /* CurvingProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF8551F6784A300167353 /* CurvingProgressView.xib */; };
+		CE6FF8581F6790B400167353 /* ProgressTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF8571F6790B400167353 /* ProgressTimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		CE6FF8481F6771CC00167353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE6FF84B1F6771CC00167353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE6FF84D1F6771CC00167353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE6FF8531F67847400167353 /* CurvingProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurvingProgressView.swift; sourceTree = "<group>"; };
+		CE6FF8551F6784A300167353 /* CurvingProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurvingProgressView.xib; sourceTree = "<group>"; };
+		CE6FF8571F6790B400167353 /* ProgressTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressTimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				CE6FF8411F6771CC00167353 /* AppDelegate.swift */,
 				CE6FF8431F6771CC00167353 /* ViewController.swift */,
+				CE6FF8531F67847400167353 /* CurvingProgressView.swift */,
+				CE6FF8571F6790B400167353 /* ProgressTimer.swift */,
+				CE6FF8551F6784A300167353 /* CurvingProgressView.xib */,
 				CE6FF8451F6771CC00167353 /* Main.storyboard */,
 				CE6FF8481F6771CC00167353 /* Assets.xcassets */,
 				CE6FF84A1F6771CC00167353 /* LaunchScreen.storyboard */,
@@ -126,6 +135,7 @@
 			files = (
 				CE6FF84C1F6771CC00167353 /* LaunchScreen.storyboard in Resources */,
 				CE6FF8491F6771CC00167353 /* Assets.xcassets in Resources */,
+				CE6FF8561F6784A300167353 /* CurvingProgressView.xib in Resources */,
 				CE6FF8471F6771CC00167353 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +147,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE6FF8581F6790B400167353 /* ProgressTimer.swift in Sources */,
 				CE6FF8441F6771CC00167353 /* ViewController.swift in Sources */,
 				CE6FF8421F6771CC00167353 /* AppDelegate.swift in Sources */,
+				CE6FF8541F67847400167353 /* CurvingProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

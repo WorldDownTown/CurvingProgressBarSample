@@ -1,26 +1,215 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mDh-zz-5EK">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="WXE-4m-HMi">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController id="mDh-zz-5EK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QnY-sS-w9D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hR8-bN-6u6" kind="relationship" relationship="rootViewController" id="7EZ-Sk-KJU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Que-yg-fyN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1441" y="26"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IHe-AM-8Dh">
+            <objects>
+                <viewController id="hR8-bN-6u6" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="Nl4-C4-xiH"/>
+                        <viewControllerLayoutGuide type="bottom" id="Pz5-Fx-FTW"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="BpK-4s-SBr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCg-VI-QbE">
+                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="ohn-KU-3gA" kind="show" id="gNw-oC-hYL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WCg-VI-QbE" firstAttribute="centerX" secondItem="BpK-4s-SBr" secondAttribute="centerX" id="NPs-eu-n2G"/>
+                            <constraint firstItem="WCg-VI-QbE" firstAttribute="centerY" secondItem="BpK-4s-SBr" secondAttribute="centerY" id="k10-Cy-6qS"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Th7-2s-MMq"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bzg-nC-HT6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-649" y="26"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zUd-Vz-05o">
+            <objects>
+                <viewController id="ohn-KU-3gA" customClass="ViewController" customModule="CurvingProgressBarSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zai-hg-LT1"/>
+                        <viewControllerLayoutGuide type="bottom" id="XqY-IK-ioN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gMQ-qQ-GCk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="46W-qx-mme">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UBc-Os-DJL" userLabel="fixedWidthView">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="pWC-yg-aHC"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XNK-OT-O42" customClass="CurvingProgressView" customModule="CurvingProgressBarSample" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="16" width="343" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="SD5-b8-otV"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Linear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yt8-vv-60X">
+                                        <rect key="frame" x="16" y="16" width="47" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vT0-P3-CSx" customClass="CurvingProgressView" customModule="CurvingProgressBarSample" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="107" width="343" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="jsB-j7-WTZ"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ease" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rgS-IU-fPl">
+                                        <rect key="frame" x="16" y="107" width="37" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fiv-FZ-nKJ" customClass="CurvingProgressView" customModule="CurvingProgressBarSample" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="198" width="343" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="Pzl-Py-KSl"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EaseIn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fG-cb-z6z">
+                                        <rect key="frame" x="16" y="198" width="50.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0I-fR-qpG" customClass="CurvingProgressView" customModule="CurvingProgressBarSample" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="289" width="343" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="Pev-c9-hbh"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EaseOut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwP-Op-X9j">
+                                        <rect key="frame" x="16" y="289" width="65" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fI2-W6-3E3" customClass="CurvingProgressView" customModule="CurvingProgressBarSample" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="380" width="343" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="rB0-r7-DrA"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EaseInOut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sse-F4-iNV">
+                                        <rect key="frame" x="16" y="380" width="78.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eT3-aq-uKw" customClass="CurvingProgressView" customModule="CurvingProgressBarSample" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="471" width="343" height="75"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="75" id="ikR-Pc-zas"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Original" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQQ-kK-DyD">
+                                        <rect key="frame" x="16" y="471" width="59" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="UBc-Os-DJL" secondAttribute="trailing" id="1Dz-pW-2Ak"/>
+                                    <constraint firstItem="5fG-cb-z6z" firstAttribute="top" secondItem="Fiv-FZ-nKJ" secondAttribute="top" id="23U-Ya-e3p"/>
+                                    <constraint firstAttribute="trailing" secondItem="vT0-P3-CSx" secondAttribute="trailing" constant="16" id="2eu-6g-HXV"/>
+                                    <constraint firstItem="XNK-OT-O42" firstAttribute="top" secondItem="46W-qx-mme" secondAttribute="top" constant="16" id="8BL-RY-y9J"/>
+                                    <constraint firstItem="W0I-fR-qpG" firstAttribute="top" secondItem="Fiv-FZ-nKJ" secondAttribute="bottom" constant="16" id="AV8-eS-CtA"/>
+                                    <constraint firstItem="XNK-OT-O42" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="C3z-NO-yE0"/>
+                                    <constraint firstAttribute="trailing" secondItem="W0I-fR-qpG" secondAttribute="trailing" constant="16" id="EDP-O9-gu6"/>
+                                    <constraint firstItem="rgS-IU-fPl" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="EIl-WI-P9v"/>
+                                    <constraint firstItem="5fG-cb-z6z" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="EZG-6I-gBk"/>
+                                    <constraint firstAttribute="trailing" secondItem="eT3-aq-uKw" secondAttribute="trailing" constant="16" id="Erq-Td-CqS"/>
+                                    <constraint firstItem="BwP-Op-X9j" firstAttribute="top" secondItem="W0I-fR-qpG" secondAttribute="top" id="ORj-eB-DNT"/>
+                                    <constraint firstItem="W0I-fR-qpG" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="T8Z-GK-3oo"/>
+                                    <constraint firstItem="sse-F4-iNV" firstAttribute="top" secondItem="fI2-W6-3E3" secondAttribute="top" id="Tsk-8F-I3w"/>
+                                    <constraint firstItem="fI2-W6-3E3" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="VgM-Y6-01P"/>
+                                    <constraint firstItem="IQQ-kK-DyD" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="Z9q-qA-fFg"/>
+                                    <constraint firstAttribute="trailing" secondItem="XNK-OT-O42" secondAttribute="trailing" constant="16" id="a7R-Oo-MbA"/>
+                                    <constraint firstItem="Fiv-FZ-nKJ" firstAttribute="top" secondItem="vT0-P3-CSx" secondAttribute="bottom" constant="16" id="f3R-JD-gjb"/>
+                                    <constraint firstItem="UBc-Os-DJL" firstAttribute="top" secondItem="46W-qx-mme" secondAttribute="top" id="fcV-7M-eEI"/>
+                                    <constraint firstItem="vT0-P3-CSx" firstAttribute="top" secondItem="XNK-OT-O42" secondAttribute="bottom" constant="16" id="fm7-ws-wgd"/>
+                                    <constraint firstItem="eT3-aq-uKw" firstAttribute="top" secondItem="fI2-W6-3E3" secondAttribute="bottom" constant="16" id="fqW-76-vKh"/>
+                                    <constraint firstItem="UBc-Os-DJL" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" id="gDe-BP-d4C"/>
+                                    <constraint firstAttribute="trailing" secondItem="fI2-W6-3E3" secondAttribute="trailing" constant="16" id="gdH-V6-9vs"/>
+                                    <constraint firstItem="sse-F4-iNV" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="hw6-xD-ZoV"/>
+                                    <constraint firstAttribute="bottom" secondItem="eT3-aq-uKw" secondAttribute="bottom" constant="16" id="iSi-TT-eBx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fiv-FZ-nKJ" secondAttribute="trailing" constant="16" id="lLP-Ea-DvE"/>
+                                    <constraint firstItem="vT0-P3-CSx" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="m1a-Rj-dRL"/>
+                                    <constraint firstItem="Yt8-vv-60X" firstAttribute="top" secondItem="XNK-OT-O42" secondAttribute="top" id="mLq-RW-gjF"/>
+                                    <constraint firstItem="Yt8-vv-60X" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="nZg-lM-O2A"/>
+                                    <constraint firstItem="Fiv-FZ-nKJ" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="oAE-yR-B9G"/>
+                                    <constraint firstItem="fI2-W6-3E3" firstAttribute="top" secondItem="W0I-fR-qpG" secondAttribute="bottom" constant="16" id="oKq-cm-xNf"/>
+                                    <constraint firstItem="IQQ-kK-DyD" firstAttribute="top" secondItem="eT3-aq-uKw" secondAttribute="top" id="ofW-RR-Jo7"/>
+                                    <constraint firstItem="eT3-aq-uKw" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="v67-bS-Bz2"/>
+                                    <constraint firstItem="rgS-IU-fPl" firstAttribute="top" secondItem="vT0-P3-CSx" secondAttribute="top" id="vZ3-MY-gHF"/>
+                                    <constraint firstItem="UBc-Os-DJL" firstAttribute="width" secondItem="46W-qx-mme" secondAttribute="width" id="xGv-tP-2DF"/>
+                                    <constraint firstItem="BwP-Op-X9j" firstAttribute="leading" secondItem="46W-qx-mme" secondAttribute="leading" constant="16" id="yrs-Kc-YCB"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="46W-qx-mme" secondAttribute="bottom" id="e0N-lL-a39"/>
+                            <constraint firstItem="46W-qx-mme" firstAttribute="top" secondItem="gMQ-qQ-GCk" secondAttribute="top" id="eNS-Of-qYc"/>
+                            <constraint firstAttribute="trailing" secondItem="46W-qx-mme" secondAttribute="trailing" id="f5U-EX-YZX"/>
+                            <constraint firstItem="46W-qx-mme" firstAttribute="leading" secondItem="gMQ-qQ-GCk" secondAttribute="leading" id="pqe-vN-PjJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outletCollection property="progressViews" destination="XNK-OT-O42" collectionClass="NSMutableArray" id="Hgu-hY-wAf"/>
+                        <outletCollection property="progressViews" destination="vT0-P3-CSx" collectionClass="NSMutableArray" id="hoY-ql-Ypl"/>
+                        <outletCollection property="progressViews" destination="Fiv-FZ-nKJ" collectionClass="NSMutableArray" id="xiP-pi-kMj"/>
+                        <outletCollection property="progressViews" destination="W0I-fR-qpG" collectionClass="NSMutableArray" id="pW5-2A-jjX"/>
+                        <outletCollection property="progressViews" destination="fI2-W6-3E3" collectionClass="NSMutableArray" id="IrQ-zm-jHd"/>
+                        <outletCollection property="progressViews" destination="eT3-aq-uKw" collectionClass="NSMutableArray" id="fiA-Sg-p5t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ds-6a-SS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="26"/>
         </scene>
     </scenes>
 </document>
