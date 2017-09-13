@@ -16,6 +16,7 @@
 		CE6FF8561F6784A300167353 /* CurvingProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF8551F6784A300167353 /* CurvingProgressView.xib */; };
 		CE6FF8581F6790B400167353 /* ProgressTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF8571F6790B400167353 /* ProgressTimer.swift */; };
 		CEA01A4C1F690EED00CBDA8A /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01A4B1F690EED00CBDA8A /* UnitBezier.swift */; };
+		CED4E9AA1F69674B00C73619 /* AnimationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4E9A91F69674B00C73619 /* AnimationCurve.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		CE6FF8551F6784A300167353 /* CurvingProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurvingProgressView.xib; sourceTree = "<group>"; };
 		CE6FF8571F6790B400167353 /* ProgressTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressTimer.swift; sourceTree = "<group>"; };
 		CEA01A4B1F690EED00CBDA8A /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
+		CED4E9A91F69674B00C73619 /* AnimationCurve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationCurve.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				CE6FF8531F67847400167353 /* CurvingProgressView.swift */,
 				CE6FF8571F6790B400167353 /* ProgressTimer.swift */,
 				CEA01A4B1F690EED00CBDA8A /* UnitBezier.swift */,
+				CED4E9A91F69674B00C73619 /* AnimationCurve.swift */,
 				CE6FF8551F6784A300167353 /* CurvingProgressView.xib */,
 				CE6FF8451F6771CC00167353 /* Main.storyboard */,
 				CE6FF8481F6771CC00167353 /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED4E9AA1F69674B00C73619 /* AnimationCurve.swift in Sources */,
 				CE6FF8581F6790B400167353 /* ProgressTimer.swift in Sources */,
 				CE6FF8441F6771CC00167353 /* ViewController.swift in Sources */,
 				CE6FF8421F6771CC00167353 /* AppDelegate.swift in Sources */,
