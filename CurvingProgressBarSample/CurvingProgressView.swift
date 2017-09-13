@@ -50,7 +50,7 @@ final class CurvingProgressView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.startAnimation()
         }
     }

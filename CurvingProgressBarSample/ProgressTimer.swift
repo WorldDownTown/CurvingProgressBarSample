@@ -39,15 +39,15 @@ final class ProgressTimer {
     private var displayLink: CADisplayLink!
     private var startTimeInterval: TimeInterval = 0.0
     private let duration: TimeInterval
-    private let animationCurve: AnimationCurve
+    private let unitBezier: UnitBezier
     var progressBlock: ((CGFloat) -> Void)?
 
     init(duration: TimeInterval = 1.0, animationCurve: AnimationCurve) {
         self.duration = duration
-        self.animationCurve = animationCurve
+        unitBezier = UnitBezier(p1: animationCurve.p1, p2: animationCurve.p2)
 
         displayLink = CADisplayLink(target: self, selector: #selector(updateTimer))
-        displayLink.preferredFramesPerSecond = 60   // 60FPS
+        displayLink.preferredFramesPerSecond = 60
         displayLink.isPaused = true
         displayLink.add(to: .current, forMode: .commonModes)
     }
@@ -60,20 +60,12 @@ final class ProgressTimer {
     @objc private func updateTimer() {
         let elapsed: TimeInterval = Date.timeIntervalSinceReferenceDate - startTimeInterval
         let progress: CGFloat = (elapsed > duration) ? 1.0 : CGFloat(elapsed / duration)
-        let t: CGFloat = progress
-        // cubic bezier
-        let y0: CGFloat = 0.0
-        let y1: CGFloat = animationCurve.p1.y
-        let y2: CGFloat = animationCurve.p2.y
-        let y3: CGFloat = 1.0
-        let computedProgress: CGFloat
-            = (1.0 - t) * (1.0 - t) * (1.0 - t) * y0
-                + 3.0 * (1.0 - t) * (1.0 - t) * t * y1
-                + 3.0 * (1.0 - t) * t * t * y2
-                + t * t * t * y3
-        progressBlock?(computedProgress)
 
-        if computedProgress == 1.0 {
+        // cubic bezier
+        let y: CGFloat = unitBezier.solve(t: progress)
+        progressBlock?(y)
+
+        if progress == 1.0 {
             displayLink.isPaused = true
         }
     }

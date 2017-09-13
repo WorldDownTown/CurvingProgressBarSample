@@ -15,6 +15,7 @@
 		CE6FF8541F67847400167353 /* CurvingProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF8531F67847400167353 /* CurvingProgressView.swift */; };
 		CE6FF8561F6784A300167353 /* CurvingProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6FF8551F6784A300167353 /* CurvingProgressView.xib */; };
 		CE6FF8581F6790B400167353 /* ProgressTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6FF8571F6790B400167353 /* ProgressTimer.swift */; };
+		CEA01A4C1F690EED00CBDA8A /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA01A4B1F690EED00CBDA8A /* UnitBezier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CE6FF8531F67847400167353 /* CurvingProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurvingProgressView.swift; sourceTree = "<group>"; };
 		CE6FF8551F6784A300167353 /* CurvingProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CurvingProgressView.xib; sourceTree = "<group>"; };
 		CE6FF8571F6790B400167353 /* ProgressTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressTimer.swift; sourceTree = "<group>"; };
+		CEA01A4B1F690EED00CBDA8A /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				CE6FF8431F6771CC00167353 /* ViewController.swift */,
 				CE6FF8531F67847400167353 /* CurvingProgressView.swift */,
 				CE6FF8571F6790B400167353 /* ProgressTimer.swift */,
+				CEA01A4B1F690EED00CBDA8A /* UnitBezier.swift */,
 				CE6FF8551F6784A300167353 /* CurvingProgressView.xib */,
 				CE6FF8451F6771CC00167353 /* Main.storyboard */,
 				CE6FF8481F6771CC00167353 /* Assets.xcassets */,
@@ -150,6 +153,7 @@
 				CE6FF8581F6790B400167353 /* ProgressTimer.swift in Sources */,
 				CE6FF8441F6771CC00167353 /* ViewController.swift in Sources */,
 				CE6FF8421F6771CC00167353 /* AppDelegate.swift in Sources */,
+				CEA01A4C1F690EED00CBDA8A /* UnitBezier.swift in Sources */,
 				CE6FF8541F67847400167353 /* CurvingProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,11 +279,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CHLXNV2U55;
 				INFOPLIST_FILE = CurvingProgressBarSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoji.CurvingProgressBarSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -288,11 +294,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = CHLXNV2U55;
 				INFOPLIST_FILE = CurvingProgressBarSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoji.CurvingProgressBarSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -316,6 +324,7 @@
 				CE6FF8521F6771CC00167353 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

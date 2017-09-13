@@ -17,11 +17,7 @@ final class ViewController: UIViewController {
 
         let animationCurves: [AnimationCurve] = [
             .linear,
-            .ease,
-            .easeIn,
-            .easeOut,
             .easeInOut,
-            .original(CGPoint(x: 0.51, y: 0.0), CGPoint(x: 0.61, y: 1.0)),
         ]
         for (view, curve) in zip(progressViews, animationCurves) {
             view.animationCurve = curve
