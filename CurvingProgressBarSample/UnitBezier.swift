@@ -42,13 +42,8 @@ struct UnitBezier {
         return nil
     }
 
-    private func solveCurveXByBiSection(t: CGFloat) -> CGFloat {
-        if t < 0 {
-            return 0
-        } else if t > 1 {
-            return 1
-        }
-
+    private func solveCurveXByBiSection(t : CGFloat) -> CGFloat {
+        let t: Double = min(max(arg, 0), 1)
         let epsilon: CGFloat = 0.000001
         var t0: CGFloat = 0
         var t1: CGFloat = 1
