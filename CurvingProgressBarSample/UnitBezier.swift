@@ -1,11 +1,3 @@
-//
-//  UnitBezier.swift
-//  CurvingProgressBarSample
-//
-//  Created by Keisuke Shoji on 2017/09/13.
-//  Copyright © 2019 Keisuke Shoji. All rights reserved.
-//
-
 import CoreGraphics
 
 /// Solver for cubic bezier curve with implicit control points at (0, 0) and (1, 1)
@@ -29,18 +21,8 @@ struct UnitBezier {
         ((a.x * t + b.x) * t + c.x) * t
     }
 
-    private func sampleCurveY(t: CGFloat) -> CGFloat {
-        ((a.y * t + b.y) * t + c.y) * t
-    }
-
-    private func sampleCurveDerivativeX(t: CGFloat) -> CGFloat {
-        (3 * a.x * t + 2 * b.x) * t + c.x
-    }
-
-    private func solveCurveX(t: CGFloat) -> CGFloat {
+    private func solveCurveXByNewtonMethod(t: CGFloat) -> CGFloat? {
         let epsilon: CGFloat = 0.000001
-        var t0: CGFloat = 0
-        var t1: CGFloat = 1
         var t2: CGFloat = t
         var x2: CGFloat = 0
 
@@ -50,26 +32,33 @@ struct UnitBezier {
             if abs(x2) < epsilon {
                 return t2
             }
-            let d2: CGFloat = sampleCurveDerivativeX(t: t2)
-            if abs(d2) < epsilon {
+
+            let derivativeT2: CGFloat = (3 * a.x * t2 + 2 * b.x) * t2 + c.x
+            if abs(derivativeT2) < epsilon {
                 break
             }
-            t2 -= x2 / d2
+            t2 -= x2 / derivativeT2
+        }
+        return nil
+    }
+
+    private func solveCurveXByBiSection(t: CGFloat) -> CGFloat {
+        if t < 0 {
+            return 0
+        } else if t > 1 {
+            return 1
         }
 
-        // No solution found - use bi-section
-        t2 = t
-
-        if t2 < t0 {
-            return t0
-        } else if t2 > t1 {
-            return t1
-        }
+        let epsilon: CGFloat = 0.000001
+        var t0: CGFloat = 0
+        var t1: CGFloat = 1
+        var t2: CGFloat = t
+        var x2: CGFloat = 0
 
         while t0 < t1 {
             x2 = sampleCurveX(t: t2)
             if abs(x2 - t) < epsilon {
-                return t2
+                break
             } else if t > x2 {
                 t0 = t2
             } else {
@@ -78,8 +67,15 @@ struct UnitBezier {
             t2 = (t1 - t0) / 2 + t0
         }
 
-        // Give up
         return t2
+    }
+
+    private func solveCurveX(t: CGFloat) -> CGFloat {
+        solveCurveXByNewtonMethod(t: t) ?? solveCurveXByBiSection(t: t)
+    }
+
+    private func sampleCurveY(t: CGFloat) -> CGFloat {
+        ((a.y * t + b.y) * t + c.y) * t
     }
 
     // Find new T as a function of Y along curve X
