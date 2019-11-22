@@ -3,12 +3,12 @@
 //  CurvingProgressBarSample
 //
 //  Created by Keisuke Shoji on 2017/09/13.
-//  Copyright © 2017年 Keisuke Shoji. All rights reserved.
+//  Copyright © 2019 Keisuke Shoji. All rights reserved.
 //
 
 import CoreGraphics
 
-/// Solver for cubic bezier curve with implicit control points at (0.0, 0.0) and (1.0, 1.0)
+/// Solver for cubic bezier curve with implicit control points at (0, 0) and (1, 1)
 struct UnitBezier {
     private let a: CGPoint
     private let b: CGPoint
@@ -16,33 +16,33 @@ struct UnitBezier {
 
     init(p1: CGPoint, p2: CGPoint) {
         // pre-calculate the polynomial coefficients
-        // First and last control points are implied to be (0.0, 0.0) and (1.0, 1.0)
-        c = CGPoint(x: 3.0 * p1.x,
-                    y: 3.0 * p1.y)
-        b = CGPoint(x: 3.0 * (p2.x - p1.x) - c.x,
-                    y: 3.0 * (p2.y - p1.y) - c.y)
-        a = CGPoint(x: 1.0 - c.x - b.x,
-                    y: 1.0 - c.y - b.y)
+        // First and last control points are implied to be (0, 0) and (1, 1)
+        c = CGPoint(x: 3 * p1.x,
+                    y: 3 * p1.y)
+        b = CGPoint(x: 3 * (p2.x - p1.x) - c.x,
+                    y: 3 * (p2.y - p1.y) - c.y)
+        a = CGPoint(x: 1 - c.x - b.x,
+                    y: 1 - c.y - b.y)
     }
 
     private func sampleCurveX(t: CGFloat) -> CGFloat {
-        return ((a.x * t + b.x) * t + c.x) * t
+        ((a.x * t + b.x) * t + c.x) * t
     }
 
     private func sampleCurveY(t: CGFloat) -> CGFloat {
-        return ((a.y * t + b.y) * t + c.y) * t
+        ((a.y * t + b.y) * t + c.y) * t
     }
 
     private func sampleCurveDerivativeX(t: CGFloat) -> CGFloat {
-        return (3.0 * a.x * t + 2.0 * b.x) * t + c.x
+        (3 * a.x * t + 2 * b.x) * t + c.x
     }
 
     private func solveCurveX(t: CGFloat) -> CGFloat {
         let epsilon: CGFloat = 0.000001
-        var t0: CGFloat = 0.0
-        var t1: CGFloat = 1.0
+        var t0: CGFloat = 0
+        var t1: CGFloat = 1
         var t2: CGFloat = t
-        var x2: CGFloat = 0.0
+        var x2: CGFloat = 0
 
         // First try a few iterations of Newton's method -- normally very fast.
         for _ in 0 ..< 8 {
@@ -54,7 +54,7 @@ struct UnitBezier {
             if abs(d2) < epsilon {
                 break
             }
-            t2 = t2 - x2 / d2
+            t2 -= x2 / d2
         }
 
         // No solution found - use bi-section
@@ -75,7 +75,7 @@ struct UnitBezier {
             } else {
                 t1 = t2
             }
-            t2 = (t1 - t0) / 2.0 + t0
+            t2 = (t1 - t0) / 2 + t0
         }
 
         // Give up
@@ -84,6 +84,6 @@ struct UnitBezier {
 
     // Find new T as a function of Y along curve X
     func solve(t: CGFloat) -> CGFloat {
-        return sampleCurveY(t: solveCurveX(t: t))
+        sampleCurveY(t: solveCurveX(t: t))
     }
 }
