@@ -18,7 +18,7 @@ struct UnitBezier {
                     y: 1 - c.y - b.y)
     }
 
-    // Find new T as a function of Y along curve X
+    /// Find new T as a function of Y along curve X
     func solve(t: CGFloat) -> CGFloat {
         sampleCurveY(t: solveCurveX(t: t))
     }
