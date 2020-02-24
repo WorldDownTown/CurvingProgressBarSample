@@ -18,6 +18,11 @@ struct UnitBezier {
                     y: 1 - c.y - b.y)
     }
 
+    // Find new T as a function of Y along curve X
+    func solve(t: CGFloat) -> CGFloat {
+        sampleCurveY(t: solveCurveX(t: t))
+    }
+
     private func sampleCurveX(t: CGFloat) -> CGFloat {
         ((a.x * t + b.x) * t + c.x) * t
     }
@@ -71,9 +76,12 @@ struct UnitBezier {
     private func sampleCurveY(t: CGFloat) -> CGFloat {
         ((a.y * t + b.y) * t + c.y) * t
     }
+}
 
-    // Find new T as a function of Y along curve X
-    func solve(t: CGFloat) -> CGFloat {
-        sampleCurveY(t: solveCurveX(t: t))
-    }
+extension UnitBezier {
+    static let linear: Self = .init(p1: .zero, p2: CGPoint(x: 1, y: 1))
+    static let ease: Self = .init(p1: CGPoint(x: 0.25, y: 0.1), p2: CGPoint(x: 0.25, y: 1))
+    static let easeIn: Self = .init(p1: CGPoint(x: 0.42, y: 0), p2: CGPoint(x: 1, y: 1))
+    static let easeOut: Self = .init(p1: .zero, p2: CGPoint(x: 0.58, y: 1))
+    static let easeInOut: Self = .init(p1: CGPoint(x: 0.42, y: 0), p2: CGPoint(x: 0.58, y: 1))
 }
