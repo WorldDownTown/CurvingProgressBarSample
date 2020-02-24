@@ -1,6 +1,7 @@
 import CoreGraphics
 
 /// Solver for cubic bezier curve with implicit control points at (0, 0) and (1, 1)
+/// Based on https://github.com/adobe/webkit/blob/master/Source/WebCore/platform/graphics/UnitBezier.h
 struct UnitBezier {
     private let a: CGPoint
     private let b: CGPoint
