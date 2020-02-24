@@ -5,6 +5,7 @@ struct UnitBezier {
     private let a: CGPoint
     private let b: CGPoint
     private let c: CGPoint
+    private let epsilon: CGFloat = 0.000001
 
     init(p1: CGPoint, p2: CGPoint) {
         // pre-calculate the polynomial coefficients
@@ -22,7 +23,6 @@ struct UnitBezier {
     }
 
     private func solveCurveXByNewtonMethod(t: CGFloat) -> CGFloat? {
-        let epsilon: CGFloat = 0.000001
         var t2: CGFloat = t
         var x2: CGFloat = 0
 
@@ -34,7 +34,7 @@ struct UnitBezier {
             }
 
             let derivativeT2: CGFloat = (3 * a.x * t2 + 2 * b.x) * t2 + c.x
-            if abs(derivativeT2) < epsilon {
+            if abs(derivativeT2) >= epsilon {
                 break
             }
             t2 -= x2 / derivativeT2
@@ -42,9 +42,8 @@ struct UnitBezier {
         return nil
     }
 
-    private func solveCurveXByBiSection(t : CGFloat) -> CGFloat {
-        let t: Double = min(max(arg, 0), 1)
-        let epsilon: CGFloat = 0.000001
+    private func solveCurveXByBiSection(t arg: CGFloat) -> CGFloat {
+        let t: CGFloat = min(max(arg, 0), 1)
         var t0: CGFloat = 0
         var t1: CGFloat = 1
         var t2: CGFloat = t
